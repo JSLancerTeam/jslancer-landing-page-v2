@@ -5,6 +5,7 @@ import ArrowRight from "./common/ArrowRight";
 
 const Wrapper = styled.div`
   position: relative;
+  height: calc(100vh - 86px);
 `;
 
 const ArrowRightStyled = styled(ArrowRight)`
