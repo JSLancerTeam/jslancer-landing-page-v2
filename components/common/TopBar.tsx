@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const HeaderWrapper = styled.header`
   display: flex;
   align-items: center;
-  height: 84px;
+  height: 86px;
   border-bottom: 2px solid #00AEEF;
 `;
 
@@ -53,13 +53,13 @@ const TopBar: FC = () => (
   <HeaderWrapper>
     <Logo src="/static/images/logo.png" alt="Jslancer Logo" />
     <NavWrapper>
-      <Link href="/">
+      <Link href="#">
         <LinkStyled>Home</LinkStyled>
       </Link>{' '}
-      <Link href="/about">
+      <Link href="#about">
         <LinkStyled>About</LinkStyled>
       </Link>{' '}
-      <Link href="/contact">
+      <Link href="#contact">
         <LinkStyled>Portfolio</LinkStyled>
       </Link>
       <Link href="/contact">

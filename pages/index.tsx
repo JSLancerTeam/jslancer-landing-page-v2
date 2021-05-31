@@ -1,15 +1,11 @@
-import styled from 'styled-components'
-import Layout from '../components/common/Layout'
+import Layout from '../components/common/Layout';
+import Home from '../components/Home';
 
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`
-
-export default function Home() {
+export default function HomePage() {
   return (
     <Layout title="JSlancer">
-      <Title>Jslancer Page</Title>
+      <Home />
+
     </Layout>
   )
 }
