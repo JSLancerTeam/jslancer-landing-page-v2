@@ -36,7 +36,7 @@ const Desc = styled.p`
 `;
 
 const List = styled.ul`
-  list-style-image: url('/static/images/style_type.svg');
+  list-style-image: url('/static/images/style_type_16.svg');
   margin: 0;
   padding-left: 23px;
 `;
