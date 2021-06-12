@@ -1,102 +1,79 @@
-import { FC } from "react";
+import { FC } from 'react';
 import styled from 'styled-components';
+import {
+  SectionContainer,
+  SectionTitle,
+  SectionContent,
+} from './common/Section';
 
-const Wrapper = styled.div`
-  padding: 109px 100px 55px;
-  background: url('/static/images/bg_about.png') no-repeat center;
-  background-size: 100%;
-  background-color: rgba(0, 174, 239, 0.05);
+const StyledSectionContent = styled(SectionContent)`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 `;
 
-const Content = styled.div`
-  margin-left: 36px;
-  width: 530px;
-`;
-
-const Title = styled.h2`
-  font-weight: bold;
-  font-size: 72px;
-  line-height: 100%;
-  font-family: Teko;
-  color: #14161F;
-  margin: 0;
-  margin-bottom: 17px;
-  text-transform: uppercase;
+const TextContent = styled.div`
+  margin-left: 50px;
 `;
 
 const Desc = styled.p`
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
-  color: #484E54;
+  color: #484e54;
   margin: 0;
   margin-bottom: 30px;
 `;
 
-const List = styled.ul`
-  list-style-image: url('/static/images/style_type_16.svg');
-  margin: 0;
-  padding-left: 23px;
+const AboutImage = styled.img`
+  border-radius: 5px;
+  filter: drop-shadow(2px 4px 40px rgba(0, 0, 0, 0.1));
 `;
 
-const Item = styled.li`
-  padding-left: 5px;
-  & + & {
-    margin-top: 20px;
-  }
-`;
-
-const TitleItem = styled.h4`
+const ListItem = styled.li`
   font-weight: 600;
   font-size: 20px;
-  line-height: 100%;
-  font-family: Teko;
-  color: #484E54;
-  margin: 0;
-  margin-bottom: 5px;
-`;
-
-const DescItem = styled.p`
-  font-weight: 600;
-  font-size: 16px;
   line-height: 140%;
-  color: #14161F;
+  color: #484e54;
   margin: 0;
+  padding-bottom: 5px;
 `;
+const About: FC = () => (
+  <SectionContainer>
+    <SectionTitle>About Us</SectionTitle>
+    <StyledSectionContent>
+      <AboutImage src='/static/images/about.png' />
+      <TextContent>
+        <Desc>
+          Started since 2015, JSLancer is a software development consultant from
+          Vietnam that helps our clients build advanced user interface and data
+          visualization products.
+        </Desc>
+        <Desc>
+          Our close-knit team consists of experienced engineers who can tackle
+          complex challenges and bring the best solution for your product,
+          allowing you to focus on strategy, business development, and growing
+          your user base with no worries.
+        </Desc>
+        <Desc>
+          We have been working with clients from US, Singapore, Australia and
+          deliver technical solutions that meet their business goals and budget.
+        </Desc>
 
-const About:FC = () => (
-  <Wrapper>
-    <img src='/static/images/about.png' />
-    <Content>
-      <Title>About Us</Title>
-      <Desc>
-        We are a web and mobile development company from Vietnam. 
-        We focus on develop rich interactive applications with React and NodeJS technologies
-      </Desc>
-      <List>
-        <Item>
-          <TitleItem>
-            High technical skills
-          </TitleItem>
-          <DescItem>
-            Our company consists of senior developers who have vast experience with React and React Native. 
-            Our technical skill allow us to tackle difficult challenges and bring the best solution for your product.
-          </DescItem>
-        </Item>
-        <Item>
-          <TitleItem>
-            Customer first
-          </TitleItem>
-          <DescItem>
-            In order to be successful, we need to understand customer's vision and goal. 
-            So we take a lot of time to understand our customer and their vision.
-          </DescItem>
-        </Item>
-      </List>
-    </Content>
-  </Wrapper>
-)
+        <ul>
+          <ListItem>
+            Advance UI with ReactJS, Redux, GraphQL, styled-components, SCSS
+          </ListItem>
+          <ListItem>Real-time application with Socket.</ListItem>
+          <ListItem>Build data visualization applications with D3JS</ListItem>
+          <ListItem>
+            Write unit test and E2E to verify the functionality of an individual
+            part or the whole of an application
+          </ListItem>
+        </ul>
+      </TextContent>
+    </StyledSectionContent>
+  </SectionContainer>
+);
 
 export default About;

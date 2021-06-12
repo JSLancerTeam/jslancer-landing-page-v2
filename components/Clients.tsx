@@ -1,30 +1,22 @@
-import { FC } from "react";
+import { FC } from 'react';
 import styled from 'styled-components';
+import {
+  SectionContainer,
+  SectionContent,
+  SectionTitle,
+} from './common/Section';
 
-const Wrapper = styled.div`
-  padding: 110px 100px 55px;
+const StyledSectionContainer = styled(SectionContainer)`
   background: url('/static/images/bg_client.png') no-repeat center;
   background-size: 100%;
   background-color: rgba(0, 174, 239, 0.05);
-  margin-top: 55px;
-`;
-
-const Title = styled.h2`
-  font-weight: bold;
-  font-size: 72px;
-  line-height: 100%;
-  font-family: Teko;
-  color: #14161F;
-  margin: 0;
-  margin-bottom: 17px;
-  text-transform: uppercase;
 `;
 
 const Desc = styled.p`
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
-  color: #484E54;
+  color: #484e54;
   margin: 0;
   margin-bottom: 50px;
   width: 530px;
@@ -33,6 +25,8 @@ const Desc = styled.p`
 const List = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
 `;
 
 const Item = styled.div`
@@ -40,43 +34,63 @@ const Item = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 253px;
-  height: 253px;
-  background: #FFFFFF;
+  width: 220px;
+  height: 220px;
+  border-radius: 3px;
+  background: #ffffff;
+  margin-right: 10px;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+
+
+  &:last-child {
+    margin-right: 0;
+  }
 `;
 
 const NameClient = styled.span`
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
-  color: #14161F;
-  margin-top: 10px;
+  color: #14161f;
+  margin-top: 20px;
+  opacity: 0.5;
 `;
+
+interface IClientLogo {
+  width: number;
+}
+
+const ClientLogo = styled.img<IClientLogo>`
+  width: ${props => props.width ? props.width : 40}px;
+`
 
 const Clients: FC = () => {
   const clients = [
-    { logo: 'logoCiStudio.png', name: 'C&I Studios' },
-    { logo: 'logoIorad.png', name: 'Iorad' },
-    { logo: 'logoTadu.png', name: 'Tadu.vn' },
-    { logo: 'logoEfex.png', name: 'Efexcon' },
-  ]
+    { logo: 'cistudios.png', name: 'C&I Studios' },
+    { logo: 'iorad.png', name: 'Iorad', width: 50 },
+    { logo: 'nugit.png', name: 'Nugit', width: 80 },
+    { logo: 'fairprice.png', name: 'Fairprice.com.sg', width: 100 },
+    { logo: 'fivegrid.png', name: 'Fivegrid', width: 100 },
+  ];
   return (
-    <Wrapper>
-      <Title>Our Clients</Title>
-      <Desc>
-        I would like to receive business support information from Birmingham City University 
-      </Desc>
-      <List>
-        {clients.map((item, index) => (
-          <Item key={index}>
-            <img src={`/static/images/${item.logo}`} />
-            <NameClient>{item.name}</NameClient>
-          </Item>
-        ))}
-      </List>
-    </Wrapper>
-  )
-} 
+    <StyledSectionContainer>
+      <SectionTitle>Our Clients</SectionTitle>
+      <SectionContent>
+        <Desc>
+          I would like to receive business support information from Birmingham
+          City University
+        </Desc>
+        <List>
+          {clients.map((item, index) => (
+            <Item key={index}>
+              <ClientLogo src={`/static/images/clients/${item.logo}`} width={item.width} />
+              <NameClient>{item.name}</NameClient>
+            </Item>
+          ))}
+        </List>
+      </SectionContent>
+    </StyledSectionContainer>
+  );
+};
 
 export default Clients;

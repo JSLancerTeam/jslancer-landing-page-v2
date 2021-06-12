@@ -45,7 +45,7 @@ const SlickDots = styled.div`
       content: unset;
     }
   }
-      
+
   li + li {
     margin-top: 23px;
   }
