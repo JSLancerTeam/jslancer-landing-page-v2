@@ -10,10 +10,19 @@ const StyledSectionContent = styled(SectionContent)`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const TextContent = styled.div`
   margin-left: 50px;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 45px;
+  }
 `;
 
 const Desc = styled.p`
@@ -23,11 +32,28 @@ const Desc = styled.p`
   color: #484e54;
   margin: 0;
   margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
 `;
 
 const AboutImage = styled.img`
   border-radius: 5px;
   filter: drop-shadow(2px 4px 40px rgba(0, 0, 0, 0.1));
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 320px;
+  }
+`;
+
+const List = styled.ul`
+  list-style-image: url('/static/images/style_type_16.svg');
+  margin: 0;
+  padding-left: 23px;
 `;
 
 const ListItem = styled.li`
@@ -37,7 +63,16 @@ const ListItem = styled.li`
   color: #484e54;
   margin: 0;
   padding-bottom: 5px;
+
+  &::marker {
+    font-size: 150%;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
+
 const About: FC = () => (
   <SectionContainer>
     <SectionTitle>About Us</SectionTitle>
@@ -60,7 +95,7 @@ const About: FC = () => (
           deliver technical solutions that meet their business goals and budget.
         </Desc>
 
-        <ul>
+        <List>
           <ListItem>
             Advance UI with ReactJS, Redux, GraphQL, styled-components, SCSS
           </ListItem>
@@ -70,7 +105,7 @@ const About: FC = () => (
             Write unit test and E2E to verify the functionality of an individual
             part or the whole of an application
           </ListItem>
-        </ul>
+        </List>
       </TextContent>
     </StyledSectionContent>
   </SectionContainer>

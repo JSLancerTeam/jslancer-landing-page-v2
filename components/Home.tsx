@@ -6,6 +6,10 @@ import ArrowRight from './common/ArrowRight';
 const Wrapper = styled.div`
   position: relative;
   height: calc(100vh - 86px);
+
+  @media (max-width: 768px) {
+    height: calc(100vh - 68px);
+  }
 `;
 
 const ArrowRightStyled = styled(ArrowRight)`
@@ -57,6 +61,11 @@ const Slide = styled.div<{ url: string }>`
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${(props) => props.url});
+
+  @media (max-width: 768px) {
+    height: calc(100vh - 68px);
+    background-position: center;
+  }
 `;
 
 const BackgroundOverlay = styled.div`
@@ -82,18 +91,29 @@ const TitleContainer = styled.div`
   top: 50%;
   left: 50px;
   transform: translate(0, -50%);
-  z-index: 999999;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    top: 150px;
+    left: 24px;
+    transform: unset;
+  }
 `
 
 const Title = styled.h2`
   font-weight: 700;
   font-size: 150px;
   line-height: 120px;
-  font-family: 'Teko', sans-serif;;
+  font-family: 'Teko', sans-serif;
   color: #00aeef;
-  z-index: 99;
   margin: 0;
   text-shadow: 5px 5px 18px rgba(55, 84, 170, var(--depth)), -7px -7px 10px rgba(255, 255, 255, 0.7), -5px -5px 0px #edf0f3, 0px 0px 4px rgba(255, 255, 255, 0.2);
+
+  @media (max-width: 768px) {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 100%;
+  }
 `;
 
 const Desc = styled.p`
@@ -103,9 +123,14 @@ const Desc = styled.p`
   line-height: 100%;
   color: #00aeef;
   width: 341px;
-  z-index: 1;
   margin: 0;
   text-shadow: 5px 5px 18px rgba(55, 84, 170, var(--depth)), -7px -7px 10px rgba(255, 255, 255, 0.7), -5px -5px 0px #edf0f3, 0px 0px 4px rgba(255, 255, 255, 0.2);
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    text-transform: uppercase;
+    width: 190px;
+  }
 `;
 
 const Home: FC = () => {
@@ -125,7 +150,7 @@ const Home: FC = () => {
 
   function renderSlide(url: string) {
     return (
-      <BackgroundOverlay>
+      <BackgroundOverlay key={url}>
         <Slide url={url} />
       </BackgroundOverlay>
     );

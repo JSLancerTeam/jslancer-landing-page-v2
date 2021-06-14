@@ -7,8 +7,7 @@ import {
 } from './common/Section';
 
 const StyledSectionContainer = styled(SectionContainer)`
-  background: url('/static/images/bg_client.png') no-repeat center;
-  background-size: 100%;
+  background-image: url('/static/images/bg_client.png');
   background-color: rgba(0, 174, 239, 0.05);
 `;
 
@@ -20,6 +19,12 @@ const Desc = styled.p`
   margin: 0;
   margin-bottom: 50px;
   width: 530px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 27px;
+  }
 `;
 
 const List = styled.div`
@@ -27,6 +32,12 @@ const List = styled.div`
   justify-content: space-between;
   margin: 0 auto;
   max-width: 1200px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 `;
 
 const Item = styled.div`
@@ -44,6 +55,12 @@ const Item = styled.div`
   &:last-child {
     margin-right: 0;
   }
+
+  @media (max-width: 768px) {
+    width: 155px;
+    height: 155px;
+    margin-right: 0;
+  }
 `;
 
 const NameClient = styled.span`
@@ -53,6 +70,10 @@ const NameClient = styled.span`
   color: #14161f;
   margin-top: 20px;
   opacity: 0.5;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 interface IClientLogo {

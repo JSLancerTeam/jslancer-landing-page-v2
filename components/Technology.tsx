@@ -12,6 +12,7 @@ import {
 const StyledSectionContainer = styled(SectionContainer)`
   background: white;
   background-image: none;
+  padding-bottom: 100px;
 `;
 
 const ContentInner = styled.div`
@@ -42,6 +43,19 @@ const Tab = styled.span<{ active?: boolean }>`
       font-size: 48px;
       line-height: 100%;
     `}
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 120%;
+    margin-right: 5px;
+
+    ${(props) =>
+      props.active &&
+      css`
+        font-size: 24px;
+        line-height: 100%;
+      `}
+  }
 `;
 
 const TechItem = styled.div<{ even?: boolean }>`
@@ -64,6 +78,12 @@ const TechItem = styled.div<{ even?: boolean }>`
         rgba(204, 239, 252, 0) 100%
       );
     `}
+
+    @media (max-width: 768px) {
+      width: 90%;
+      height: 220px;
+      padding: 30px 0;
+    }
 `;
 
 const TechIconWrapper = styled.div`
@@ -79,6 +99,15 @@ const TechIconWrapper = styled.div`
   img {
     max-width: 70%;
   }
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+
+    img {
+      max-width: 40%;
+    }
+  }
 `;
 
 const TechTitle = styled.span`
@@ -86,6 +115,10 @@ const TechTitle = styled.span`
   font-size: 20px;
   line-height: 140%;
   color: #000000;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const ArrowRightStyled = styled(ArrowRight)`
@@ -93,6 +126,13 @@ const ArrowRightStyled = styled(ArrowRight)`
   height: auto;
   right: 0;
   top: -53px;
+
+  @media (max-width: 768px) {
+    width: 45px;
+    height: 45px;
+    bottom: -75px;
+    top: unset;
+  }
 `;
 
 const ArrowLeftStyled = styled(ArrowLeft)`
@@ -101,6 +141,14 @@ const ArrowLeftStyled = styled(ArrowLeft)`
   right: 95px;
   left: auto;
   top: -53px;
+
+  @media (max-width: 768px) {
+    width: 45px;
+    height: 45px;
+    top: unset;
+    right: 50px;
+    bottom: -75px;
+  }
 `;
 
 interface ITechnologyItem {
@@ -135,14 +183,18 @@ const backends = [
   { image: 'technologies/backend/graphql.svg', name: 'GraphQL' },
 ];
 
-const Technology: FC = () => {
+interface IProps {
+  isMobile: boolean;
+}
+
+const Technology: FC<IProps> = ({ isMobile }) => {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: isMobile ? 2 : 4,
     slidesToScroll: 1,
     nextArrow: <ArrowRightStyled />,
     prevArrow: <ArrowLeftStyled />,

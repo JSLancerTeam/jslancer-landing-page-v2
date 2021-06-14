@@ -14,6 +14,10 @@ const Label = styled.label`
   transition: 0.2s;
   font-size: 14px;
   color: #8a8b8c;
+
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
 `;
 
 const Input = styled.input`
@@ -51,6 +55,18 @@ const Input = styled.input`
     transition: 0.2s;
     font-size: 14px;
     color: #14161f;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+
+    &:placeholder-shown ~ ${Label} {
+      font-size: 14px;
+    }
+
+    &:focus ~ ${Label} {
+      font-size: 10px;
+    }
   }
 `;
 interface IProps {

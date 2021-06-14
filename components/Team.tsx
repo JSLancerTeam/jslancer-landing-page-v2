@@ -3,20 +3,12 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import ArrowLeft from "./common/ArrowLeft";
 import ArrowRight from "./common/ArrowRight";
+import { SectionContainer, SectionContent, SectionTitle } from "./common/Section";
 
-const Wrapper = styled.div`
-  padding: 120px 100px 60px;
-`;
-
-const Title = styled.h2`
-  font-weight: bold;
-  font-size: 72px;
-  line-height: 100%;
-  font-family: Teko;
-  text-transform: uppercase;
-  color: #14161F;
-  margin: 0;
-  margin-bottom: 15px;
+const StyledSectionContainer = styled(SectionContainer)`
+  background: white;
+  background-image: none;
+  padding-bottom: 100px;
 `;
 
 const Desc = styled.p`
@@ -27,9 +19,12 @@ const Desc = styled.p`
   width: 530px;
   margin: 0;
   margin-bottom: 35px;
-`;
 
-const Content = styled.div``;
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size: 16px;
+  }
+`;
 
 const MemberWrapper = styled.div`
   margin: 0 auto;
@@ -38,6 +33,7 @@ const MemberWrapper = styled.div`
 const Member = styled.div<{ url: string }>`
   background: linear-gradient(180.07deg, rgba(255, 255, 255, 0) 55.83%, #00AEEF 107.7%), url(${props => `${props.url}`});
   background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
@@ -47,6 +43,12 @@ const Member = styled.div<{ url: string }>`
   padding: 20px;
   box-shadow: 4px 10px 15px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    height: 250px;
+    padding: 12px;
+  }
 `;
 
 const NameMember = styled.span`
@@ -56,6 +58,10 @@ const NameMember = styled.span`
   line-height: 100%;
   color: #FFFFFF;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const PositionMember = styled.span`
@@ -64,6 +70,10 @@ const PositionMember = styled.span`
   line-height: 140%;
   color: #FFFFFF;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const LinkSocial = styled.div`
@@ -81,6 +91,13 @@ const ArrowRightStyled = styled(ArrowRight)`
   height: auto;
   right: 0;
   top: -82px;
+
+  @media (max-width: 768px) {
+    width: 45px;
+    height: 45px;
+    bottom: -75px;
+    top: unset;
+  }
 `;
 
 const ArrowLeftStyled = styled(ArrowLeft)`
@@ -89,6 +106,14 @@ const ArrowLeftStyled = styled(ArrowLeft)`
   right: 95px;
   left: auto;
   top: -82px;
+
+  @media (max-width: 768px) {
+    width: 45px;
+    height: 45px;
+    top: unset;
+    right: 50px;
+    bottom: -75px;
+  }
 `;
 
 const teams = [
@@ -98,12 +123,16 @@ const teams = [
   { image: '/static/images/team/tony.png', name: 'Tony Nguyen', position: 'Frontend Developer' },
 ];
 
-const Team: FC = () => {
+interface IProps {
+  isMobile: boolean;
+}
+
+const Team: FC<IProps> = ({ isMobile }) => {
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: isMobile ? 2 : 4,
     slidesToScroll: 1,
     nextArrow: <ArrowRightStyled />,
     prevArrow: <ArrowLeftStyled />,
@@ -111,10 +140,10 @@ const Team: FC = () => {
   };
 
   return (
-    <Wrapper>
-      <Title>MEET THE TEAM</Title>
+    <StyledSectionContainer>
+      <SectionTitle>MEET THE TEAM</SectionTitle>
       <Desc>We are grateful to know you are interested in our content and services. Subscribe</Desc>
-      <Content>
+      <SectionContent>
         <Slider {...settings}>
           {teams.map((item, index) => (
             <div key={index}>
@@ -135,8 +164,8 @@ const Team: FC = () => {
             </div>
           ))}
         </Slider>
-      </Content>
-    </Wrapper>
+      </SectionContent>
+    </StyledSectionContainer>
   )
 }
 

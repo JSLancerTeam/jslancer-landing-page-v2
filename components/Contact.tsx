@@ -1,23 +1,10 @@
 import { FC } from 'react';
 import styled from 'styled-components';
+import { SectionContainer, SectionTitle } from './common/Section';
 import TextField from './common/TextField';
 
-const Wrapper = styled.div`
-  padding: 75px 100px 110px;
-  background: url('/static/images/bg_contact.jpg') no-repeat center;
-  background-size: 100%;
-  background-color: rgba(0, 174, 239, 0.05);
-`;
-
-const Title = styled.h2`
-  font-weight: bold;
-  font-size: 72px;
-  line-height: 100%;
-  font-family: Teko;
-  color: #14161f;
-  margin: 0;
-  margin-bottom: 15px;
-  text-transform: uppercase;
+const StyledSectionContainer = styled(SectionContainer)`
+  background-image: url('/static/images/bg_contact.jpg');
 `;
 
 const Desc = styled.p`
@@ -28,11 +15,20 @@ const Desc = styled.p`
   margin: 0;
   margin-bottom: 55px;
   width: 530px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    width: 100%;
+  }
 `;
 
 const InputWrapper = styled.div`
   width: 400px;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const SubmitButton = styled.div`
@@ -48,12 +44,18 @@ const SubmitButton = styled.div`
   color: #FFFFFF;
   margin-top: 70px;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    width: 132px;
+    height: 50px;
+  }
 `
 
 const Contact: FC = () => {
   return (
-    <Wrapper>
-      <Title>Get in touch</Title>
+    <StyledSectionContainer>
+      <SectionTitle>Get in touch</SectionTitle>
       <Desc>
         We always try to implement our creative ideas at the highest level. Tell
         us about your project and we will make it work.
@@ -68,7 +70,7 @@ const Contact: FC = () => {
         <TextField name='message' label='Message' />
       </InputWrapper>
       <SubmitButton>Send message</SubmitButton>
-    </Wrapper>
+    </StyledSectionContainer>
   );
 };
 

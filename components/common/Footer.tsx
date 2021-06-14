@@ -6,6 +6,11 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: flex-end;
+
+  @media (max-width: 768px) {
+    padding: 30px;
+    align-items: center;
+  }
 `;
 
 const SocialMediaList = styled.div`
@@ -41,6 +46,21 @@ const Copyright = styled.div`
   font-size: 16px;
   text-transform: uppercase;
   color: #8a8b8c;
+  display: flex;
+  
+  span:first-child {
+    margin-right: 5px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: center;
+
+    span:first-child {
+      margin-right: 0;
+    }
+  }
 `;
 
 const Footer = () => (
@@ -53,7 +73,10 @@ const Footer = () => (
         <img src='/static/images/social-medias/github.svg' />
       </SocialMediaItem>
     </SocialMediaList>
-    <Copyright>Copyright © 2021 JSLancer. All Rights Reserved.</Copyright>
+    <Copyright>
+      <span>Copyright © 2021 JSLancer.</span>
+      <span>All Rights Reserved.</span>
+    </Copyright>
   </Container>
 );
 

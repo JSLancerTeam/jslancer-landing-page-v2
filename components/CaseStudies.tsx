@@ -13,6 +13,13 @@ const ImageItem = styled.img`
   object-fit: cover;
   border-radius: 5px;
   filter: drop-shadow(2px 4px 40px rgba(0, 0, 0, 0.1));
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    max-width: 100%;
+    order: -1;
+    margin-bottom: 30px;
+  }
 `;
 
 const CaseStudyItem = styled.div`
@@ -22,6 +29,15 @@ const CaseStudyItem = styled.div`
 
   & + & {
     margin-top: 70px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 0;
+
+    & + & {
+      margin-top: 50px;
+    }
   }
 `;
 
@@ -35,6 +51,12 @@ const TitleItem = styled.h4`
   color: #484e54;
   margin: 0;
   margin-bottom: 40px;
+  
+  @media (max-width: 768px) {
+    font-size: 24px;
+    line-height: 100%;
+    margin-bottom: 0;
+  }
 `;
 
 const DescItem = styled.p`
@@ -44,6 +66,11 @@ const DescItem = styled.p`
   color: #000000;
   margin: 0;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 140%;
+  }
 `;
 
 const CaseStudies: FC = () => (
