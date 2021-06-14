@@ -4,10 +4,9 @@ import TextField from './common/TextField';
 
 const Wrapper = styled.div`
   padding: 75px 100px 110px;
-  background: url('/static/images/home-bg.jpg') no-repeat center;
+  background: url('/static/images/bg_contact.jpg') no-repeat center;
   background-size: 100%;
   background-color: rgba(0, 174, 239, 0.05);
-  filter: blur(4px);
 `;
 
 const Title = styled.h2`
@@ -37,7 +36,18 @@ const InputWrapper = styled.div`
 `;
 
 const SubmitButton = styled.div`
-  width: 400px;
+  width: 202px;
+  height: 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #00AEEF;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 140%;
+  color: #FFFFFF;
+  margin-top: 70px;
+  cursor: pointer;
 `
 
 const Contact: FC = () => {
@@ -57,6 +67,7 @@ const Contact: FC = () => {
       <InputWrapper>
         <TextField name='message' label='Message' />
       </InputWrapper>
+      <SubmitButton>Send message</SubmitButton>
     </Wrapper>
   );
 };

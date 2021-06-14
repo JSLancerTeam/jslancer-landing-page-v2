@@ -125,10 +125,10 @@ const Team: FC = () => {
                 </Member>
                 <LinkSocial>
                   <a href='#'>
-                    <img src='/static/images/twitter.svg' />
+                    <img src='/static/images/team/twitter.svg' />
                   </a>
                   <a href='#'>
-                    <img src='/static/images/github.svg' />
+                    <img src='/static/images/team/github.svg' />
                   </a>
                 </LinkSocial>
               </MemberWrapper>

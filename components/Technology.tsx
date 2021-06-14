@@ -120,19 +120,19 @@ const frontends: Array<ITechnologyItem> = [
   { image: 'technologies/frontend/redux.svg', name: 'Redux' },
   {
     image: 'technologies/frontend/styled-components.svg',
-    name: 'styled-components',
+    name: 'Styled-components',
   },
   { image: 'technologies/frontend/graphql.svg', name: 'GraphQL' },
   { image: 'technologies/frontend/socketio.svg', name: 'SocketIO' },
 ];
 
 const backends = [
-  { image: 'javascript.svg', name: 'Javascript' },
-  { image: 'node.svg', name: 'NodeJS' },
-  { image: 'apollo.svg', name: 'Apollo' },
-  { image: 'mysql.svg', name: 'MySQL' },
-  { image: 'mongo.svg', name: 'MongoDB' },
-  { image: 'graphql.svg', name: 'GraphQL' },
+  { image: 'technologies/backend/javascript.svg', name: 'Javascript' },
+  { image: 'technologies/backend/node.svg', name: 'NodeJS' },
+  { image: 'technologies/backend/apollo.svg', name: 'Apollo' },
+  { image: 'technologies/backend/mysql.svg', name: 'MySQL' },
+  { image: 'technologies/backend/mongo.svg', name: 'MongoDB' },
+  { image: 'technologies/backend/graphql.svg', name: 'GraphQL' },
 ];
 
 const Technology: FC = () => {
