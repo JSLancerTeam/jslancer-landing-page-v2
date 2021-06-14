@@ -36,7 +36,8 @@ const MemberWrapper = styled.div`
 `;
 
 const Member = styled.div<{ url: string }>`
-  background: linear-gradient(180.07deg, rgba(255, 255, 255, 0) 55.83%, #00AEEF 107.7%), url(${props => `/static/images/${props.url}`});
+  background: linear-gradient(180.07deg, rgba(255, 255, 255, 0) 55.83%, #00AEEF 107.7%), url(${props => `${props.url}`});
+  background-repeat: no-repeat;
   background-position: center;
   display: flex;
   flex-direction: column;
@@ -45,6 +46,7 @@ const Member = styled.div<{ url: string }>`
   height: 376px;
   padding: 20px;
   box-shadow: 4px 10px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
 `;
 
 const NameMember = styled.span`
@@ -90,11 +92,10 @@ const ArrowLeftStyled = styled(ArrowLeft)`
 `;
 
 const teams = [
-  { image: 'david.png', name: 'David Tran', position: 'Lead Developer' },
-  { image: 'leo.png', name: 'Leo Phan', position: 'Full-stack Developer' },
-  { image: 'clement.png', name: 'Clement Le', position: 'Full-stack Developer' },
-  { image: 'tony.png', name: 'Tony Nguyen', position: 'Frontend Developer' },
-  { image: 'felix.png', name: 'Felix Le', position: 'Frontend Developer' },
+  { image: '/static/images/team/david.png', name: 'David Tran', position: 'Lead Developer' },
+  { image: '/static/images/team/leo-phan.png', name: 'Leo Phan', position: 'Full-stack Developer' },
+  { image: '/static/images/team/clement.png', name: 'Clement Le', position: 'Full-stack Developer' },
+  { image: '/static/images/team/tony.png', name: 'Tony Nguyen', position: 'Frontend Developer' },
 ];
 
 const Team: FC = () => {

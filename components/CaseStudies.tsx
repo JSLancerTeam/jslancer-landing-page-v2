@@ -46,14 +46,6 @@ const DescItem = styled.p`
   margin-bottom: 20px;
 `;
 
-const LinkItem = styled.a`
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 140%;
-  color: #00aeef;
-  text-decoration: underline;
-`;
-
 const CaseStudies: FC = () => (
   <StyledSectionContainer>
     <SectionTitle>Case Studies</SectionTitle>

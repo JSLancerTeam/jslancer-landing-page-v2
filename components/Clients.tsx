@@ -41,7 +41,6 @@ const Item = styled.div`
   margin-right: 10px;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
 
-
   &:last-child {
     margin-right: 0;
   }
@@ -57,21 +56,29 @@ const NameClient = styled.span`
 `;
 
 interface IClientLogo {
-  width: number;
+  width?: number;
 }
 
 const ClientLogo = styled.img<IClientLogo>`
-  width: ${props => props.width ? props.width : 40}px;
-`
+  width: ${(props) => (props.width ? props.width : 40)}px;
+`;
+
+interface IClient {
+  logo: string;
+  name: string;
+  width?: number;
+}
 
 const Clients: FC = () => {
-  const clients = [
+
+  const clients: Array<IClient> = [
     { logo: 'cistudios.png', name: 'C&I Studios' },
     { logo: 'iorad.png', name: 'Iorad', width: 50 },
     { logo: 'nugit.png', name: 'Nugit', width: 80 },
     { logo: 'fairprice.png', name: 'Fairprice.com.sg', width: 100 },
     { logo: 'fivegrid.png', name: 'Fivegrid', width: 100 },
   ];
+
   return (
     <StyledSectionContainer>
       <SectionTitle>Our Clients</SectionTitle>
@@ -83,7 +90,10 @@ const Clients: FC = () => {
         <List>
           {clients.map((item, index) => (
             <Item key={index}>
-              <ClientLogo src={`/static/images/clients/${item.logo}`} width={item.width} />
+              <ClientLogo
+                src={`/static/images/clients/${item.logo}`}
+                width={item.width}
+              />
               <NameClient>{item.name}</NameClient>
             </Item>
           ))}
