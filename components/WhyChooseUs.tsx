@@ -192,7 +192,8 @@ const WhyChooseUs: FC = () => (
             </ReasonItem>
             <ReasonItem>
               <ReasonValue>
-                <label>5</label>
+                <label>4.5</label>
+                <span>+</span>
               </ReasonValue>
               <ReasonName>Stars on Upwork</ReasonName>
             </ReasonItem>
