@@ -89,8 +89,8 @@ const About: FC = () => (
           allowing you to focus on strategy, business development, and growing your user base with no worries.
         </Desc>
         <Desc>
-          We have been working with clients fromthe US, Singapore, Australia and d
-          elivertechnical solutions that meet their business goals and budget.
+          We have been working with clients fromthe US, Singapore, Australia and 
+          deliver technical solutions that meet their business goals and budget.
         </Desc>
 
         <List>

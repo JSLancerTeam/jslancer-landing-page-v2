@@ -112,20 +112,6 @@ const RightContent = styled.div`
   }
 `;
 
-const Desc = styled.p`
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 140%;
-  color: #484e54;
-  margin: 0;
-  margin-bottom: 30px;
-
-  @media (max-width: 768px) {
-    font-size: 16px;
-    line-height: 149%;
-  }
-`;
-
 const List = styled.ul`
   list-style-image: url('/static/images/style_type_26.svg');
   margin: 0;
@@ -216,16 +202,12 @@ const WhyChooseUs: FC = () => (
           </Col>
         </LeftContent>
         <RightContent>
-          <Desc>
-            We’ve got a lot of awards for ourproducts and services that became
-            popular in the world.
-          </Desc>
           <List>
             <Item>
               <TitleItem>Experienced and skilled Front-end Developers</TitleItem>
               <DescItem>
                 Our company consists of senior developers who have vast experience with Front-end Development. 
-                We work endlesslyto ensure our partnership with clients moves forward in only thebest way. 
+                We work endlessly to ensure our partnership with clients moves forward in only the best way. 
                 Every new project becomes our goal and together with our clients, we create synergy, 
                 believing that together we'll reach our goal faster.
               </DescItem>
@@ -233,9 +215,9 @@ const WhyChooseUs: FC = () => (
             <Item>
               <TitleItem>Customer-First</TitleItem>
               <DescItem>
-                In our company, success in achieving customer-centricity and customer loyalty is no longera differentiator. 
+                In our company, success in achieving customer-centricity and customer loyalty is no longer a differentiator. 
                 It has become a matter of survival. By combining professionalism, engagement in the projects, 
-                and creativity, as anagency we can use the potential of the companies we serve to thefullest 
+                and creativity, as anagency we can use the potential of the companies we serve to the fullest 
                 and contribute to their further development. 
                 The successes of our clients are our successes, too - successes 
                 we reach together by taking advantage of the constantly Front-end Developing service offered by JSLancer.
