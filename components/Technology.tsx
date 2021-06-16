@@ -158,17 +158,17 @@ interface ITechnologyItem {
 }
 
 const frontends: Array<ITechnologyItem> = [
-  {
-    image: 'technologies/frontend/typescript.svg',
-    name: 'TypeScript',
-    width: '59%',
-  },
-  { image: 'technologies/frontend/javascript.svg', name: 'Javascript' },
   { image: 'technologies/frontend/react.svg', name: 'React' },
   { image: 'technologies/frontend/redux.svg', name: 'Redux' },
   {
     image: 'technologies/frontend/styled-components.svg',
     name: 'Styled-components',
+  },
+  { image: 'technologies/frontend/javascript.svg', name: 'Javascript' },
+  {
+    image: 'technologies/frontend/typescript.svg',
+    name: 'TypeScript',
+    width: '59%',
   },
   { image: 'technologies/frontend/graphql.svg', name: 'GraphQL' },
   { image: 'technologies/frontend/socketio.svg', name: 'SocketIO' },
