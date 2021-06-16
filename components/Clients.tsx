@@ -11,22 +11,6 @@ const StyledSectionContainer = styled(SectionContainer)`
   background-color: rgba(0, 174, 239, 0.05);
 `;
 
-const Desc = styled.p`
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 140%;
-  color: #484e54;
-  margin: 0;
-  margin-bottom: 50px;
-  width: 530px;
-
-  @media (max-width: 768px) {
-    font-size: 16px;
-    width: 100%;
-    margin-bottom: 27px;
-  }
-`;
-
 const List = styled.div`
   display: flex;
   justify-content: space-between;
@@ -104,10 +88,6 @@ const Clients: FC = () => {
     <StyledSectionContainer>
       <SectionTitle>Our Clients</SectionTitle>
       <SectionContent>
-        <Desc>
-          I would like to receive business support information from Birmingham
-          City University
-        </Desc>
         <List>
           {clients.map((item, index) => (
             <Item key={index}>

@@ -11,21 +11,6 @@ const StyledSectionContainer = styled(SectionContainer)`
   padding-bottom: 100px;
 `;
 
-const Desc = styled.p`
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 140%;
-  color: #484E54;
-  width: 530px;
-  margin: 0;
-  margin-bottom: 35px;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    font-size: 16px;
-  }
-`;
-
 const MemberWrapper = styled.div`
   margin: 0 auto;
 `;
@@ -142,7 +127,6 @@ const Team: FC<IProps> = ({ isMobile }) => {
   return (
     <StyledSectionContainer>
       <SectionTitle>MEET THE TEAM</SectionTitle>
-      <Desc>We are grateful to know you are interested in our content and services. Subscribe</Desc>
       <SectionContent>
         <Slider {...settings}>
           {teams.map((item, index) => (

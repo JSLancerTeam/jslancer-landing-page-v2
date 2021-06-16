@@ -95,6 +95,7 @@ const ReasonName = styled.p`
   line-height: 140%;
   color: #14161f;
   margin: 0;
+  text-align: center;
 
   @media (max-width: 768px) {
       font-size: 14px;
@@ -187,14 +188,13 @@ const WhyChooseUs: FC = () => (
                 <label>100</label>
                 <span>%</span>
               </ReasonValue>
-              <ReasonName>Satisfied</ReasonName>
+              <ReasonName>Satisfied Clients</ReasonName>
             </ReasonItem>
             <ReasonItem>
               <ReasonValue>
-                <label>42</label>
-                <span>+</span>
+                <label>5</label>
               </ReasonValue>
-              <ReasonName>Satisfied Clients</ReasonName>
+              <ReasonName>Stars on Upwork</ReasonName>
             </ReasonItem>
           </Col>
           <Col>
@@ -203,14 +203,14 @@ const WhyChooseUs: FC = () => (
                 <label>20</label>
                 <span>+</span>
               </ReasonValue>
-              <ReasonName>Awards Winning</ReasonName>
+              <ReasonName>Successful Projects</ReasonName>
             </ReasonItem>
             <ReasonItem>
               <ReasonValue>
-                <label>324</label>
-                <span>+</span>
+                <label>100</label>
+                <span>%</span>
               </ReasonValue>
-              <ReasonName>Successful Projects</ReasonName>
+              <ReasonName>Job Success on Upwork</ReasonName>
             </ReasonItem>
           </Col>
         </LeftContent>
@@ -221,19 +221,23 @@ const WhyChooseUs: FC = () => (
           </Desc>
           <List>
             <Item>
-              <TitleItem>Modern Technologies</TitleItem>
+              <TitleItem>Experienced and skilled Front-end Developers</TitleItem>
               <DescItem>
-                Our company consists of senior developers who have vast
-                experience with React and React Native challenges and bring the
-                best solution
+                Our company consists of senior developers who have vast experience with Front-end Development. 
+                We work endlesslyto ensure our partnership with clients moves forward in only thebest way. 
+                Every new project becomes our goal and together with our clients, we create synergy, 
+                believing that together we'll reach our goal faster.
               </DescItem>
             </Item>
             <Item>
-              <TitleItem>Huge Digital Experience</TitleItem>
+              <TitleItem>Customer-First</TitleItem>
               <DescItem>
-                In order to be successful, we need to understand customer's
-                vision and goal. So we take a lot of time to understand our
-                customer and their vision.
+                In our company, success in achieving customer-centricity and customer loyalty is no longera differentiator. 
+                It has become a matter of survival. By combining professionalism, engagement in the projects, 
+                and creativity, as anagency we can use the potential of the companies we serve to thefullest 
+                and contribute to their further development. 
+                The successes of our clients are our successes, too - successes 
+                we reach together by taking advantage of the constantly Front-end Developing service offered by JSLancer.
               </DescItem>
             </Item>
           </List>
