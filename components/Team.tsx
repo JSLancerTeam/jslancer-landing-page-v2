@@ -103,6 +103,7 @@ const ArrowLeftStyled = styled(ArrowLeft)`
 
 const teams = [
   { image: '/static/images/team/david.png', name: 'David Tran', position: 'Lead Developer' },
+  { image: '/static/images/team/kiet-nguyen.png', name: 'Kiet Nguyen', position: 'Business Manager' },
   { image: '/static/images/team/leo-phan.png', name: 'Leo Phan', position: 'Full-stack Developer' },
   { image: '/static/images/team/clement.png', name: 'Clement Le', position: 'Full-stack Developer' },
   { image: '/static/images/team/tony.png', name: 'Tony Nguyen', position: 'Frontend Developer' },
